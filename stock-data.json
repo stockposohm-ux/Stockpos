@@ -1,0 +1,1694 @@
+{
+  "version": "2026-09-02-report",
+  "exportedAt": "2026-09-02T10:23:00+07:00",
+  "note": "นำเข้าจากรายงานสต็อกประจำวัน 02/09/2026 (บ้านใหญ่ 07:29 น. / บ้านดาด๊า 10:23 น.)",
+  "locations": [
+    {
+      "id": "loc_banyai",
+      "name": "บ้านใหญ่"
+    },
+    {
+      "id": "loc_bandada",
+      "name": "บ้านดาด๊า"
+    }
+  ],
+  "locationData": {
+    "loc_banyai": {
+      "products": [
+        {
+          "name": "ไซอิ๋ว [ เม็ด ] ⚪",
+          "category": "ไซอิ๋ว",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [],
+          "qty": 0,
+          "oldQty": 0,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T07:29:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "ไซอิ๋ว [ แท่ง ] 🍡",
+          "category": "ไซอิ๋ว",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "Ld93007062a",
+              "qty": 4,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 4,
+          "oldQty": 4,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T07:29:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "เนื้อปลาโล 📦",
+          "category": "เนื้อปลา",
+          "unit": "หิ้ว",
+          "minQty": 2,
+          "note": "",
+          "lots": [
+            {
+              "id": "L751ebc573c",
+              "qty": 2,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 2,
+          "oldQty": 2,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T07:29:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "เนื้อปลาครึ่งโล ⚖️",
+          "category": "เนื้อปลา",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "L8adc5645e6",
+              "qty": 8,
+              "expire": "",
+              "cat": "old"
+            },
+            {
+              "id": "La6aa8eaedc",
+              "qty": 8,
+              "expire": "",
+              "cat": "new"
+            }
+          ],
+          "qty": 16,
+          "oldQty": 8,
+          "newQty": 8,
+          "expire": "",
+          "addedAt": "2026-09-02T07:29:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "เต้าหู้ไข่ [ ธรรมดา ]",
+          "category": "เต้าหู้ไข่",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "Ld9aca2c318",
+              "qty": 15,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 15,
+          "oldQty": 15,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T07:29:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "เต้าหู้พยาบาล 👩‍⚕️",
+          "category": "เต้าหู้ไข่",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "Lf2e6c9bb89",
+              "qty": 3,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 3,
+          "oldQty": 3,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T07:29:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "โคราช [ แท่ง ]",
+          "category": "โคราช",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [],
+          "qty": 0,
+          "oldQty": 0,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T07:29:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "โคราช [ เปลือย ]",
+          "category": "โคราช",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [],
+          "qty": 0,
+          "oldQty": 0,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T07:29:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "เปรี้ยว 🍋",
+          "category": "เจ๊นก",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [],
+          "qty": 0,
+          "oldQty": 0,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T07:29:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "เผ็ด 🌶️",
+          "category": "เจ๊นก",
+          "unit": "หิ้ว",
+          "minQty": 3,
+          "note": "",
+          "lots": [
+            {
+              "id": "L67b8569e19",
+              "qty": 3,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 3,
+          "oldQty": 3,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T07:29:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "แหนมจิ๋ว เปิบ",
+          "category": "แหนม",
+          "unit": "หิ้ว",
+          "minQty": 2,
+          "note": "",
+          "lots": [
+            {
+              "id": "L25fdd82519",
+              "qty": 2,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 2,
+          "oldQty": 2,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T07:29:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "แหนม เปิบ [ แท่งยาว 35 บาท ]",
+          "category": "แหนม",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "Lf9e725b34c",
+              "qty": 1,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 1,
+          "oldQty": 1,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T07:29:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "แหนมปลากราย 🟩",
+          "category": "แหนม",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "L6ed097e095",
+              "qty": 2,
+              "expire": "",
+              "cat": "old"
+            },
+            {
+              "id": "L45d721e1f4",
+              "qty": 2,
+              "expire": "",
+              "cat": "new"
+            }
+          ],
+          "qty": 4,
+          "oldQty": 2,
+          "newQty": 2,
+          "expire": "",
+          "addedAt": "2026-09-02T07:29:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "หมูเด้ง ไร่ขิง",
+          "category": "หมูเด้ง",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [],
+          "qty": 0,
+          "oldQty": 0,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T07:29:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "หมูเด้ง หลอด",
+          "category": "หมูเด้ง",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [],
+          "qty": 0,
+          "oldQty": 0,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T07:29:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "หมูเด้ง เปิบ",
+          "category": "หมูเด้ง",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "L4466878925",
+              "qty": 5,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 5,
+          "oldQty": 5,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T07:29:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "ไส้กรอกอีสาน คอลลาเจน",
+          "category": "อื่น ๆ",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [],
+          "qty": 0,
+          "oldQty": 0,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T07:29:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        }
+      ],
+      "categories": [
+        {
+          "emoji": "🏓",
+          "name": "ไซอิ๋ว"
+        },
+        {
+          "emoji": "🐟",
+          "name": "เนื้อปลา"
+        },
+        {
+          "emoji": "🥚",
+          "name": "เต้าหู้ไข่"
+        },
+        {
+          "emoji": "🌾",
+          "name": "โคราช"
+        },
+        {
+          "emoji": "🐣",
+          "name": "เจ๊นก"
+        },
+        {
+          "emoji": "🌯",
+          "name": "แหนม"
+        },
+        {
+          "emoji": "🐖",
+          "name": "หมูเด้ง"
+        },
+        {
+          "emoji": "🆕",
+          "name": "อื่น ๆ"
+        }
+      ]
+    },
+    "loc_bandada": {
+      "products": [
+        {
+          "name": "ปลาเส้นบู๊ฮวด 🐳",
+          "category": "ลูกชิ้นปลา",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "Lb3e8512c76",
+              "qty": 1,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 1,
+          "oldQty": 1,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "ไก่เกลียว",
+          "category": "เต้าหู้",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [],
+          "qty": 0,
+          "oldQty": 0,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "เจเจ",
+          "category": "เต้าหู้",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [],
+          "qty": 0,
+          "oldQty": 0,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "เต้าหู้ทรงเครื่อง",
+          "category": "เต้าหู้",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "L81915f3619",
+              "qty": 1,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 1,
+          "oldQty": 1,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "เต้าหู้ปูอัด",
+          "category": "เต้าหู้",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "L9eaa4f109f",
+              "qty": 1,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 1,
+          "oldQty": 1,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "กุนซือ [ เต๋า ]",
+          "category": "เต้าหู้",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "Lb85d8811f4",
+              "qty": 3,
+              "expire": "",
+              "cat": "old"
+            },
+            {
+              "id": "L2ff983f764",
+              "qty": 2,
+              "expire": "",
+              "cat": "new"
+            }
+          ],
+          "qty": 5,
+          "oldQty": 3,
+          "newQty": 2,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "กุนซือ [ แผ่น ]",
+          "category": "เต้าหู้",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "L652be970d9",
+              "qty": 11,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 11,
+          "oldQty": 11,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "เอเอ 🅰️",
+          "category": "เต้าหู้",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "L0c2787f69f",
+              "qty": 7,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 7,
+          "oldQty": 7,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "เอ็นเนื้อ 🐮",
+          "category": "เอ็น 90",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "L0d17ac4ac5",
+              "qty": 5,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 5,
+          "oldQty": 5,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "เอ็นหมู 🐷",
+          "category": "เอ็น 90",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "L713328c922",
+              "qty": 10,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 10,
+          "oldQty": 10,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "คานิคุง 250 กรัม",
+          "category": "ลัง",
+          "unit": "ลัง",
+          "minQty": 1,
+          "note": "",
+          "lots": [],
+          "qty": 0,
+          "oldQty": 0,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "เต้าหู้ปลา ทรีวงษ์ [ 75 บาท ]",
+          "category": "ลัง",
+          "unit": "ลัง",
+          "minQty": 1,
+          "note": "",
+          "lots": [],
+          "qty": 0,
+          "oldQty": 0,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "ปูอัดคานิคุง [ 12 ซม. ]",
+          "category": "ลัง",
+          "unit": "ลัง",
+          "minQty": 1,
+          "note": "",
+          "lots": [],
+          "qty": 0,
+          "oldQty": 0,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "ปูอัด คานิคุง [ 500 กรัม ]",
+          "category": "ลัง",
+          "unit": "ลัง",
+          "minQty": 1,
+          "note": "",
+          "lots": [],
+          "qty": 0,
+          "oldQty": 0,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "ปูอัด คานิจัง [ แท่งเล็ก ]",
+          "category": "ลัง",
+          "unit": "ลัง",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "L25a177e31a",
+              "qty": 1,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 1,
+          "oldQty": 1,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "ปูอัดปาตี้",
+          "category": "ลัง",
+          "unit": "ลัง",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "L804f4d21b2",
+              "qty": 1,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 1,
+          "oldQty": 1,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "เป่าทูโหนใส้ไข่กุ้ง",
+          "category": "ลัง",
+          "unit": "ลัง",
+          "minQty": 1,
+          "note": "",
+          "lots": [],
+          "qty": 0,
+          "oldQty": 0,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "หมึกหลอด [ เล็ก ]",
+          "category": "ลัง",
+          "unit": "ลัง",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "L755a465bdf",
+              "qty": 1,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 1,
+          "oldQty": 1,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "เบนโตะ",
+          "category": "ลัง",
+          "unit": "ลัง",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "L1071b3aecb",
+              "qty": 4,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 4,
+          "oldQty": 4,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "ปูอัด คานิจัง [ แท่งใหญ่ ]",
+          "category": "ลัง",
+          "unit": "ลัง",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "L7e6a8a5338",
+              "qty": 2,
+              "expire": "",
+              "cat": "old"
+            },
+            {
+              "id": "L4fdab168f0",
+              "qty": 1,
+              "expire": "",
+              "cat": "new"
+            }
+          ],
+          "qty": 3,
+          "oldQty": 2,
+          "newQty": 1,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "ปูอัด คานิจัง [ ยาว 12 ซม. ]",
+          "category": "ลัง",
+          "unit": "ลัง",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "Lc636dc7e00",
+              "qty": 2,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 2,
+          "oldQty": 2,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "ปูอัด จัมโบ้",
+          "category": "ลัง",
+          "unit": "ลัง",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "Lbe1d4f4faf",
+              "qty": 5,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 5,
+          "oldQty": 5,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "หมึกหลอด [ ใหญ่ ]",
+          "category": "ลัง",
+          "unit": "ลัง",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "Lec2fc8635c",
+              "qty": 2,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 2,
+          "oldQty": 2,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "Mega Crab",
+          "category": "ลัง",
+          "unit": "ลัง",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "L0e483ed8e3",
+              "qty": 4,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 4,
+          "oldQty": 4,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "ทอดมันคุณง้วน",
+          "category": "ทอดมัน",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [],
+          "qty": 0,
+          "oldQty": 0,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "หมูกระเทียม [ 13 ชิ้น ]",
+          "category": "หมูกระเทียม",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [],
+          "qty": 0,
+          "oldQty": 0,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "หมูกระเทียมสีฟ้า",
+          "category": "หมูกระเทียม",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [],
+          "qty": 0,
+          "oldQty": 0,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "ซุปเปอร์เชฟไก่ 🐔",
+          "category": "ฮอทดอก",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "L7bb2a9c1c3",
+              "qty": 4,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 4,
+          "oldQty": 4,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "ไทฟู้ด 15+2 ชิ้น",
+          "category": "ฮอทดอก",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "L69b8ca53e4",
+              "qty": 3,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 3,
+          "oldQty": 3,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "ปลาระเบิด เขียว [ แหลม ]",
+          "category": "ปลาระเบิด",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [],
+          "qty": 0,
+          "oldQty": 0,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "ฮาลาล",
+          "category": "ลูกชิ้น",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "L49e9af806e",
+              "qty": 1,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 1,
+          "oldQty": 1,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "รสหนึ่ง [ เนื้อ ]",
+          "category": "ลูกชิ้น",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "Lcb81dbf777",
+              "qty": 3,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 3,
+          "oldQty": 3,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "รสหนึ่ง [ หมู ]",
+          "category": "ลูกชิ้น",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "Lae3d2676a1",
+              "qty": 1,
+              "expire": "",
+              "cat": "old"
+            },
+            {
+              "id": "L3f2c35e52a",
+              "qty": 6,
+              "expire": "",
+              "cat": "new"
+            }
+          ],
+          "qty": 7,
+          "oldQty": 1,
+          "newQty": 6,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "โบโลน่า [ พริก ]",
+          "category": "เบทาโกร",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [],
+          "qty": 0,
+          "oldQty": 0,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "โบโลน่า [ ไม่พริก ]",
+          "category": "เบทาโกร",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [],
+          "qty": 0,
+          "oldQty": 0,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "ยอแดง",
+          "category": "เบทาโกร",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [],
+          "qty": 0,
+          "oldQty": 0,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "เบทาโกร 16 + 1",
+          "category": "เบทาโกร",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "L67ad659128",
+              "qty": 20,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 20,
+          "oldQty": 20,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "เบทาโกร 20 + 1",
+          "category": "เบทาโกร",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "L4bf453ecea",
+              "qty": 6,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 6,
+          "oldQty": 6,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "ยอขาว",
+          "category": "เบทาโกร",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "La8c0a5b57a",
+              "qty": 5,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 5,
+          "oldQty": 5,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "ยอกลม กัปตันแจ็ค",
+          "category": "35 บาท",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [],
+          "qty": 0,
+          "oldQty": 0,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "จ๊อ [ กุ้ง ]",
+          "category": "35 บาท",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "Laa0ce6d0b4",
+              "qty": 4,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 4,
+          "oldQty": 4,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "จ๊อ [ ทะเล ]",
+          "category": "35 บาท",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "L71e2274ce0",
+              "qty": 4,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 4,
+          "oldQty": 4,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "จ๊อ [ ปูอัด ]",
+          "category": "35 บาท",
+          "unit": "หิ้ว",
+          "minQty": 0,
+          "note": "",
+          "lots": [
+            {
+              "id": "L0dfb092991",
+              "qty": 1,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 1,
+          "oldQty": 1,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "จ๊อ [ สาหร่าย ]",
+          "category": "35 บาท",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "Lab4381ad7c",
+              "qty": 5,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 5,
+          "oldQty": 5,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "จ๊อ [ หมู ]",
+          "category": "35 บาท",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "L889273bb13",
+              "qty": 5,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 5,
+          "oldQty": 5,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "ยอแผ่นสี่เหลี่ยม กัปตันแจ็ค 🥅",
+          "category": "35 บาท",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "L350cfd0e66",
+              "qty": 2,
+              "expire": "",
+              "cat": "old"
+            },
+            {
+              "id": "L9292b7cdbb",
+              "qty": 2,
+              "expire": "",
+              "cat": "new"
+            }
+          ],
+          "qty": 4,
+          "oldQty": 2,
+          "newQty": 2,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "หมูปิ้ง กิมซุน [ ไม้ 10 บาท ]",
+          "category": "หมูปิ้ง",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [],
+          "qty": 0,
+          "oldQty": 0,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "โบราณ [ ไม้ 5 บาท ]",
+          "category": "หมูปิ้ง",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "L61d5ee9b59",
+              "qty": 9,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 9,
+          "oldQty": 9,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "หมูปิ้ง กิมซุน [ นมสด ไม้ 5 บาท ]",
+          "category": "หมูปิ้ง",
+          "unit": "แพ็ก",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "Le9e2866980",
+              "qty": 6,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 6,
+          "oldQty": 6,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "หมูปิ้ง เจ๊เม้า โบราณ [ ไม้ 10 บาท ]",
+          "category": "หมูปิ้ง",
+          "unit": "แพ็ก",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "L0257fcd432",
+              "qty": 31,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 31,
+          "oldQty": 31,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "ปูอัด แผ่น ทอด",
+          "category": "อื่น ๆ",
+          "unit": "หิ้ว",
+          "minQty": 2,
+          "note": "",
+          "lots": [
+            {
+              "id": "Lc12f9aeba1",
+              "qty": 2,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 2,
+          "oldQty": 2,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "หมูบด",
+          "category": "อื่น ๆ",
+          "unit": "แพ็ก",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "La854ac9b19",
+              "qty": 25,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 25,
+          "oldQty": 25,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "กรอบเหลือง",
+          "category": "เจริญศรี",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "L077a472e64",
+              "qty": 1,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 1,
+          "oldQty": 1,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "แหนมย่าง",
+          "category": "เจริญศรี",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [],
+          "qty": 0,
+          "oldQty": 0,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "อั่วใหญ่",
+          "category": "เจริญศรี",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [],
+          "qty": 0,
+          "oldQty": 0,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "บิ๊กซีส",
+          "category": "เจริญศรี",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "L1b60758109",
+              "qty": 8,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 8,
+          "oldQty": 8,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "ไบร์ทซีส",
+          "category": "เจริญศรี",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "Lbfe4f2bc9e",
+              "qty": 3,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 3,
+          "oldQty": 3,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "ไบร์ทแฮม",
+          "category": "เจริญศรี",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "L1113be1660",
+              "qty": 2,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 2,
+          "oldQty": 2,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "หมูดี",
+          "category": "เจริญศรี",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "Ld08ba8139c",
+              "qty": 9,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 9,
+          "oldQty": 9,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "อั่วเล็ก [ เล็ก ]",
+          "category": "เจริญศรี",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "Lac1920dd61",
+              "qty": 4,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 4,
+          "oldQty": 4,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "PP ซอสเซส",
+          "category": "เจริญศรี",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "Lf932410e14",
+              "qty": 9,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 9,
+          "oldQty": 9,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        }
+      ],
+      "categories": [
+        {
+          "emoji": "🦈",
+          "name": "ลูกชิ้นปลา"
+        },
+        {
+          "emoji": "🍮",
+          "name": "เต้าหู้"
+        },
+        {
+          "emoji": "🍄",
+          "name": "เอ็น 90"
+        },
+        {
+          "emoji": "📦",
+          "name": "ลัง"
+        },
+        {
+          "emoji": "🥨",
+          "name": "ทอดมัน"
+        },
+        {
+          "emoji": "🐷",
+          "name": "หมูกระเทียม"
+        },
+        {
+          "emoji": "🌭",
+          "name": "ฮอทดอก"
+        },
+        {
+          "emoji": "🐡",
+          "name": "ปลาระเบิด"
+        },
+        {
+          "emoji": "🍡",
+          "name": "ลูกชิ้น"
+        },
+        {
+          "emoji": "🏓",
+          "name": "เบทาโกร"
+        },
+        {
+          "emoji": "🍘",
+          "name": "35 บาท"
+        },
+        {
+          "emoji": "🍖",
+          "name": "หมูปิ้ง"
+        },
+        {
+          "emoji": "🆕",
+          "name": "อื่น ๆ"
+        },
+        {
+          "emoji": "💎",
+          "name": "เจริญศรี"
+        }
+      ]
+    }
+  }
+}
