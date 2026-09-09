@@ -1,7 +1,7 @@
 {
   "version": "2026-09-02-report",
   "exportedAt": "2026-09-02T10:23:00+07:00",
-  "note": "นำเข้าจากรายงานสต็อกประจำวัน 02/09/2026 (บ้านใหญ่ 07:29 น. / บ้านดาด๊า 10:23 น.) — ย้ายหมวด \"หมูปิ้ง\" (4 รายการ) จากบ้านดาด๊า ไปบ้านใหญ่ เมื่อ 09/09/2026",
+  "note": "บ้านใหญ่: ยอดนับสต็อก 09/09/2026 07:53 น. (รวมหมวดหมูปิ้งที่ย้ายมาจากบ้านดาด๊า) / บ้านดาด๊า: รายงานประจำวัน 02/09/2026 10:23 น. — \"version\" คงเดิมโดยตั้งใจ เครื่องที่โหลด seed นี้ไปแล้วจะได้ไม่ถูกเขียนทับยอดที่นับเอง",
   "locations": [
     {
       "id": "loc_banyai",
@@ -21,9 +21,16 @@
           "unit": "หิ้ว",
           "minQty": 1,
           "note": "",
-          "lots": [],
-          "qty": 0,
-          "oldQty": 0,
+          "lots": [
+            {
+              "id": "Le7b1ddefe8",
+              "qty": 28,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 28,
+          "oldQty": 28,
           "newQty": 0,
           "expire": "",
           "addedAt": "2026-09-02T07:29:00+07:00",
@@ -38,14 +45,14 @@
           "note": "",
           "lots": [
             {
-              "id": "Ld93007062a",
-              "qty": 4,
+              "id": "L658f486ef3",
+              "qty": 17,
               "expire": "",
               "cat": "old"
             }
           ],
-          "qty": 4,
-          "oldQty": 4,
+          "qty": 17,
+          "oldQty": 17,
           "newQty": 0,
           "expire": "",
           "addedAt": "2026-09-02T07:29:00+07:00",
@@ -60,14 +67,14 @@
           "note": "",
           "lots": [
             {
-              "id": "L751ebc573c",
-              "qty": 2,
+              "id": "L915e735354",
+              "qty": 4,
               "expire": "",
               "cat": "old"
             }
           ],
-          "qty": 2,
-          "oldQty": 2,
+          "qty": 4,
+          "oldQty": 4,
           "newQty": 0,
           "expire": "",
           "addedAt": "2026-09-02T07:29:00+07:00",
@@ -82,21 +89,15 @@
           "note": "",
           "lots": [
             {
-              "id": "L8adc5645e6",
-              "qty": 8,
+              "id": "La715c7bc10",
+              "qty": 13,
               "expire": "",
               "cat": "old"
-            },
-            {
-              "id": "La6aa8eaedc",
-              "qty": 8,
-              "expire": "",
-              "cat": "new"
             }
           ],
-          "qty": 16,
-          "oldQty": 8,
-          "newQty": 8,
+          "qty": 13,
+          "oldQty": 13,
+          "newQty": 0,
           "expire": "",
           "addedAt": "2026-09-02T07:29:00+07:00",
           "lastIn": null,
@@ -110,14 +111,14 @@
           "note": "",
           "lots": [
             {
-              "id": "Ld9aca2c318",
-              "qty": 15,
+              "id": "L3f91dff17f",
+              "qty": 17,
               "expire": "",
               "cat": "old"
             }
           ],
-          "qty": 15,
-          "oldQty": 15,
+          "qty": 17,
+          "oldQty": 17,
           "newQty": 0,
           "expire": "",
           "addedAt": "2026-09-02T07:29:00+07:00",
@@ -132,14 +133,14 @@
           "note": "",
           "lots": [
             {
-              "id": "Lf2e6c9bb89",
-              "qty": 3,
+              "id": "L781cbae2ae",
+              "qty": 2,
               "expire": "",
               "cat": "old"
             }
           ],
-          "qty": 3,
-          "oldQty": 3,
+          "qty": 2,
+          "oldQty": 2,
           "newQty": 0,
           "expire": "",
           "addedAt": "2026-09-02T07:29:00+07:00",
@@ -221,14 +222,14 @@
           "note": "",
           "lots": [
             {
-              "id": "L25fdd82519",
-              "qty": 2,
+              "id": "L3ada916185",
+              "qty": 3,
               "expire": "",
               "cat": "old"
             }
           ],
-          "qty": 2,
-          "oldQty": 2,
+          "qty": 3,
+          "oldQty": 3,
           "newQty": 0,
           "expire": "",
           "addedAt": "2026-09-02T07:29:00+07:00",
@@ -265,21 +266,15 @@
           "note": "",
           "lots": [
             {
-              "id": "L6ed097e095",
+              "id": "L3911c2cb6c",
               "qty": 2,
               "expire": "",
               "cat": "old"
-            },
-            {
-              "id": "L45d721e1f4",
-              "qty": 2,
-              "expire": "",
-              "cat": "new"
             }
           ],
-          "qty": 4,
+          "qty": 2,
           "oldQty": 2,
-          "newQty": 2,
+          "newQty": 0,
           "expire": "",
           "addedAt": "2026-09-02T07:29:00+07:00",
           "lastIn": null,
@@ -291,9 +286,16 @@
           "unit": "หิ้ว",
           "minQty": 1,
           "note": "",
-          "lots": [],
-          "qty": 0,
-          "oldQty": 0,
+          "lots": [
+            {
+              "id": "L90d2d2bbdd",
+              "qty": 6,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 6,
+          "oldQty": 6,
           "newQty": 0,
           "expire": "",
           "addedAt": "2026-09-02T07:29:00+07:00",
@@ -323,14 +325,14 @@
           "note": "",
           "lots": [
             {
-              "id": "L4466878925",
-              "qty": 5,
+              "id": "L3578c1e0d7",
+              "qty": 8,
               "expire": "",
               "cat": "old"
             }
           ],
-          "qty": 5,
-          "oldQty": 5,
+          "qty": 8,
+          "oldQty": 8,
           "newQty": 0,
           "expire": "",
           "addedAt": "2026-09-02T07:29:00+07:00",
@@ -375,14 +377,14 @@
           "note": "",
           "lots": [
             {
-              "id": "L61d5ee9b59",
-              "qty": 9,
+              "id": "L16a07886d2",
+              "qty": 2,
               "expire": "",
               "cat": "old"
             }
           ],
-          "qty": 9,
-          "oldQty": 9,
+          "qty": 2,
+          "oldQty": 2,
           "newQty": 0,
           "expire": "",
           "addedAt": "2026-09-02T10:23:00+07:00",
@@ -419,17 +421,127 @@
           "note": "",
           "lots": [
             {
-              "id": "L0257fcd432",
-              "qty": 31,
+              "id": "L64f333c8fe",
+              "qty": 10,
               "expire": "",
               "cat": "old"
             }
           ],
-          "qty": 31,
-          "oldQty": 31,
+          "qty": 10,
+          "oldQty": 10,
           "newQty": 0,
           "expire": "",
           "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "เส้นแก้ว [ ใหญ่ ]",
+          "category": "ของแห้ง",
+          "unit": "ลัง",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "L93716993d7",
+              "qty": 2,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 2,
+          "oldQty": 2,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-09T07:53:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "วุ้น ท่าเรือ",
+          "category": "ของแห้ง",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "L6d46ccaf8e",
+              "qty": 4,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 4,
+          "oldQty": 4,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-09T07:53:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "สาหร่าย",
+          "category": "ของแห้ง",
+          "unit": "ลัง",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "Le25f25e205",
+              "qty": 1,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 1,
+          "oldQty": 1,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-09T07:53:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "เห็ด [ เล็ก ]",
+          "category": "ของแห้ง",
+          "unit": "ลัง",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "L40b696fc22",
+              "qty": 2,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 2,
+          "oldQty": 2,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-09T07:53:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "เห็ด [ ใหญ่ ]",
+          "category": "ของแห้ง",
+          "unit": "ลัง",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "L81b2454684",
+              "qty": 1,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 1,
+          "oldQty": 1,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-09T07:53:00+07:00",
           "lastIn": null,
           "lastOut": null
         }
@@ -466,6 +578,10 @@
         {
           "emoji": "🍖",
           "name": "หมูปิ้ง"
+        },
+        {
+          "emoji": "🍜",
+          "name": "ของแห้ง"
         },
         {
           "emoji": "🆕",

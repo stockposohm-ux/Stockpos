@@ -3008,9 +3008,11 @@ function importData(event){
           event.target.value=""; return;
         }
         products = parsed.products || [];
-        moveLogs = parsed.logs || parsed.moveLogs || [];
-        categories = parsed.categories || DEFAULT_CATS.slice();
-        memoItems = parsed.memo || [];
+        /* ไฟล์ที่ไม่มี log/memo/หมวด มาด้วย = ไม่ได้ตั้งใจจะแก้ส่วนนั้น → เก็บของเดิมไว้
+           (เดิมกลายเป็น [] ทำให้ประวัติและรายการจดของสถานที่นี้หายทั้งหมด) */
+        moveLogs = parsed.logs || parsed.moveLogs || moveLogs || [];
+        categories = parsed.categories || categories || DEFAULT_CATS.slice();
+        memoItems = parsed.memo || memoItems || [];
         saveLocationData();
         render(); renderLog(); renderMemo();
 
