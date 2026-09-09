@@ -4849,6 +4849,71 @@ function reloadStockData(){
   loadStockDataFromJson();
 }
 
+/* ============================================================
+   ย้ายหมวด "หมูปิ้ง" จากบ้านดาด๊า → บ้านใหญ่ (ครั้งเดียว)
+   stock-data.json ถูกแก้ให้หมวดนี้อยู่บ้านใหญ่แล้ว แต่เครื่องที่เคย
+   โหลด seed เวอร์ชันนี้ไปแล้วจะไม่โหลดซ้ำ (กันยอดที่นับมาทั้งอาทิตย์หาย)
+   จึงย้ายในข้อมูลที่เก็บไว้ในเครื่องให้ด้วย — ยอดคงเหลือ/ล็อตเดิมไม่หาย
+   ============================================================ */
+var MIG_MUPING_KEY = 'stockboard_mig_muping_banyai';
+
+function migrateMuPingToBanyai(){
+  if(localStorage.getItem(MIG_MUPING_KEY) === '1') return;
+  var locs = [], ldata = {};
+  try{ locs  = JSON.parse(localStorage.getItem('stockboard_locations') || '[]') || []; }catch(e){ return; }
+  try{ ldata = JSON.parse(localStorage.getItem('stockboard_locationData') || '{}') || {}; }catch(e){ return; }
+
+  var fromId = null, toId = null;
+  for(var i=0;i<locs.length;i++){
+    if(locs[i].name === 'บ้านดาด๊า') fromId = locs[i].id;
+    if(locs[i].name === 'บ้านใหญ่')  toId   = locs[i].id;
+  }
+  /* ยังไม่มีสถานที่ครบ (เช่น เครื่องใหม่ที่ seed ยังโหลดไม่เสร็จ) → ไว้ค่อยย้ายรอบหน้า */
+  if(!fromId || !toId || !ldata[fromId] || !ldata[toId]) return;
+
+  var CAT  = 'หมูปิ้ง';
+  var from = ldata[fromId], to = ldata[toId];
+  var fromProds = from.products || [], toProds = to.products || [];
+
+  var moved = [], stay = [];
+  for(var p=0;p<fromProds.length;p++){
+    if(fromProds[p] && fromProds[p].category === CAT) moved.push(fromProds[p]);
+    else stay.push(fromProds[p]);
+  }
+
+  /* ชื่อซ้ำกับของที่บ้านใหญ่มีอยู่แล้ว → ต่อท้ายชื่อไว้ ไม่ทับของเดิมและไม่ทำยอดหาย */
+  var taken = {};
+  for(var t=0;t<toProds.length;t++){ if(toProds[t]) taken[toProds[t].name] = true; }
+  for(var m=0;m<moved.length;m++){
+    if(taken[moved[m].name]) moved[m].name = moved[m].name + ' (ย้ายจากบ้านดาด๊า)';
+    taken[moved[m].name] = true;
+    toProds.push(moved[m]);
+  }
+
+  /* ย้ายป้ายหมวดตามไปด้วย: ถอดออกจากบ้านดาด๊า แล้ววางไว้ก่อนหมวด "อื่น ๆ" ที่บ้านใหญ่ */
+  var fromCats = from.categories || [], toCats = to.categories || [];
+  var chip = null, keptCats = [];
+  for(var c=0;c<fromCats.length;c++){
+    if(fromCats[c] && fromCats[c].name === CAT) chip = fromCats[c];
+    else keptCats.push(fromCats[c]);
+  }
+  var hasChip = false;
+  for(var c2=0;c2<toCats.length;c2++){ if(toCats[c2] && toCats[c2].name === CAT) hasChip = true; }
+  if(!hasChip){
+    var at = toCats.length;
+    for(var c3=0;c3<toCats.length;c3++){ if(toCats[c3] && toCats[c3].name === 'อื่น ๆ'){ at = c3; break; } }
+    toCats.splice(at, 0, chip || {emoji:'🍖', name:CAT});
+  }
+
+  from.products = stay;   from.categories = keptCats;
+  to.products   = toProds; to.categories  = toCats;
+
+  try{
+    localStorage.setItem('stockboard_locationData', JSON.stringify(ldata));
+    localStorage.setItem(MIG_MUPING_KEY, '1');
+  }catch(e){}
+}
+
 /* ================= COUNT MODE (โหมดนับสต็อก) =================
    แก้ปัญหา: เดินนับนาน + หาของ/นึกชื่อไม่ออก
    - จำ "ลำดับเดิน" จากรอบที่แล้ว แล้วไล่ให้ทีละตัวตามเส้นทางเดินจริง
@@ -5307,6 +5372,7 @@ function renderCount(){
 loadStockDataFromJson();
 
 // INIT
+migrateMuPingToBanyai();   // ย้ายหมวด "หมูปิ้ง" เข้าบ้านใหญ่ ก่อนอ่านข้อมูลเข้าหน้าจอ
 initMultiLocation();
 // NOTE: loadData() ถูกลบออก เพราะมันเขียนทับข้อมูล multi-location
 // ข้อมูลถูกโหลดผ่าน initMultiLocation() → loadLocationData() แล้ว

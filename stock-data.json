@@ -1,7 +1,7 @@
 {
   "version": "2026-09-02-report",
   "exportedAt": "2026-09-02T10:23:00+07:00",
-  "note": "นำเข้าจากรายงานสต็อกประจำวัน 02/09/2026 (บ้านใหญ่ 07:29 น. / บ้านดาด๊า 10:23 น.)",
+  "note": "นำเข้าจากรายงานสต็อกประจำวัน 02/09/2026 (บ้านใหญ่ 07:29 น. / บ้านดาด๊า 10:23 น.) — ย้ายหมวด \"หมูปิ้ง\" (4 รายการ) จากบ้านดาด๊า ไปบ้านใหญ่ เมื่อ 09/09/2026",
   "locations": [
     {
       "id": "loc_banyai",
@@ -351,6 +351,87 @@
           "addedAt": "2026-09-02T07:29:00+07:00",
           "lastIn": null,
           "lastOut": null
+        },
+        {
+          "name": "หมูปิ้ง กิมซุน [ ไม้ 10 บาท ]",
+          "category": "หมูปิ้ง",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [],
+          "qty": 0,
+          "oldQty": 0,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "โบราณ [ ไม้ 5 บาท ]",
+          "category": "หมูปิ้ง",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "L61d5ee9b59",
+              "qty": 9,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 9,
+          "oldQty": 9,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "หมูปิ้ง กิมซุน [ นมสด ไม้ 5 บาท ]",
+          "category": "หมูปิ้ง",
+          "unit": "แพ็ก",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "Le9e2866980",
+              "qty": 6,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 6,
+          "oldQty": 6,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "หมูปิ้ง เจ๊เม้า โบราณ [ ไม้ 10 บาท ]",
+          "category": "หมูปิ้ง",
+          "unit": "แพ็ก",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "L0257fcd432",
+              "qty": 31,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 31,
+          "oldQty": 31,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T10:23:00+07:00",
+          "lastIn": null,
+          "lastOut": null
         }
       ],
       "categories": [
@@ -381,6 +462,10 @@
         {
           "emoji": "🐖",
           "name": "หมูเด้ง"
+        },
+        {
+          "emoji": "🍖",
+          "name": "หมูปิ้ง"
         },
         {
           "emoji": "🆕",
@@ -1322,87 +1407,6 @@
           "lastOut": null
         },
         {
-          "name": "หมูปิ้ง กิมซุน [ ไม้ 10 บาท ]",
-          "category": "หมูปิ้ง",
-          "unit": "หิ้ว",
-          "minQty": 1,
-          "note": "",
-          "lots": [],
-          "qty": 0,
-          "oldQty": 0,
-          "newQty": 0,
-          "expire": "",
-          "addedAt": "2026-09-02T10:23:00+07:00",
-          "lastIn": null,
-          "lastOut": null
-        },
-        {
-          "name": "โบราณ [ ไม้ 5 บาท ]",
-          "category": "หมูปิ้ง",
-          "unit": "หิ้ว",
-          "minQty": 1,
-          "note": "",
-          "lots": [
-            {
-              "id": "L61d5ee9b59",
-              "qty": 9,
-              "expire": "",
-              "cat": "old"
-            }
-          ],
-          "qty": 9,
-          "oldQty": 9,
-          "newQty": 0,
-          "expire": "",
-          "addedAt": "2026-09-02T10:23:00+07:00",
-          "lastIn": null,
-          "lastOut": null
-        },
-        {
-          "name": "หมูปิ้ง กิมซุน [ นมสด ไม้ 5 บาท ]",
-          "category": "หมูปิ้ง",
-          "unit": "แพ็ก",
-          "minQty": 1,
-          "note": "",
-          "lots": [
-            {
-              "id": "Le9e2866980",
-              "qty": 6,
-              "expire": "",
-              "cat": "old"
-            }
-          ],
-          "qty": 6,
-          "oldQty": 6,
-          "newQty": 0,
-          "expire": "",
-          "addedAt": "2026-09-02T10:23:00+07:00",
-          "lastIn": null,
-          "lastOut": null
-        },
-        {
-          "name": "หมูปิ้ง เจ๊เม้า โบราณ [ ไม้ 10 บาท ]",
-          "category": "หมูปิ้ง",
-          "unit": "แพ็ก",
-          "minQty": 1,
-          "note": "",
-          "lots": [
-            {
-              "id": "L0257fcd432",
-              "qty": 31,
-              "expire": "",
-              "cat": "old"
-            }
-          ],
-          "qty": 31,
-          "oldQty": 31,
-          "newQty": 0,
-          "expire": "",
-          "addedAt": "2026-09-02T10:23:00+07:00",
-          "lastIn": null,
-          "lastOut": null
-        },
-        {
           "name": "ปูอัด แผ่น ทอด",
           "category": "อื่น ๆ",
           "unit": "หิ้ว",
@@ -1675,10 +1679,6 @@
         {
           "emoji": "🍘",
           "name": "35 บาท"
-        },
-        {
-          "emoji": "🍖",
-          "name": "หมูปิ้ง"
         },
         {
           "emoji": "🆕",
