@@ -1045,7 +1045,13 @@ select.cmd-select {
 .ct-row .nm small{display:block;font-weight:400;color:var(--txt-3);font-size:11px;margin-top:2px}
 .ct-row input{width:62px;flex:0 0 62px;text-align:center;font-size:18px;font-weight:800;padding:9px 2px;border:2px solid var(--border-2);border-radius:10px;background:var(--surface);color:var(--txt)}
 .ct-row.ok input{border-color:var(--green)}
-.ct-row .same{flex:0 0 auto;border:none;background:var(--surface-3);color:var(--txt-2);border-radius:9px;padding:9px 8px;font-size:11px;font-weight:700;cursor:pointer}
+.ct-row .same{flex:0 0 58px;width:58px;border:none;background:var(--surface-3);color:var(--txt-2);border-radius:9px;padding:9px 4px;font-size:11px;font-weight:700;cursor:pointer}
+.ct-row .sp{display:flex;gap:9px;flex:0 0 auto}
+.ct-row .sp input{width:54px;flex:0 0 54px;font-size:17px}
+.ct-rowhead{display:flex;align-items:center;gap:9px;padding:8px 12px;background:var(--surface-2);font-size:11px;font-weight:700;color:var(--txt-3)}
+.ct-rowhead .nm{flex:1;min-width:0}
+.ct-rowhead .h{flex:0 0 54px;text-align:center}
+.ct-rowhead .hb{flex:0 0 58px}
 .ct-jump{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 12px;border-top:1px solid var(--border);font-size:13px;color:var(--txt-2);cursor:pointer}
 .ct-jump b{color:var(--txt);font-weight:600}
 .ct-jump .go{color:var(--brand);font-weight:800;font-size:12px;white-space:nowrap}
@@ -5058,12 +5064,6 @@ function ctBack(){
   ctSaveSession(); renderCount();
 }
 function ctJumpTo(i){ countSession.idx = i; ctSaveSession(); renderCount(); }
-function ctToggleSplit(){
-  var b = document.getElementById('ctSplitBox'), q = document.getElementById('ctQtyBox');
-  if(!b || !q) return;
-  if(b.style.display === 'none'){ b.style.display = 'block'; q.style.display = 'none'; var e=document.getElementById('ctOld'); if(e) e.focus(); }
-  else { b.style.display = 'none'; q.style.display = 'block'; var e2=document.getElementById('ctQty'); if(e2) e2.focus(); }
-}
 
 /* ---- บันทึกผลการนับทั้งหมดเข้าสต็อกจริง ---- */
 function ctApply(){
@@ -5148,7 +5148,14 @@ function ctCopyResult(){
 /* ---------------- RENDER ---------------- */
 var ctViewMode = (function(){ try{ return localStorage.getItem('stockboard_count_view') || 'all'; }catch(e){ return 'all'; } })();     /* 'all' = เห็นทั้งหมด เลือกกรอกตัวไหนก่อนก็ได้ | 'one' = ไล่ทีละตัว */
 var ctFilter = '';
+/* แยกช่อง "เก่า/ใหม่" ไว้ตลอด — เปิดไว้เป็นค่าเริ่มต้น จะได้จดรวดเดียวไม่ต้องกดเปิดทีละตัว */
+var ctSplitMode = (function(){ try{ return localStorage.getItem('stockboard_count_split') !== '0'; }catch(e){ return true; } })();
 
+function ctSetSplitMode(on){
+  ctSplitMode = !!on;
+  try{ localStorage.setItem('stockboard_count_split', ctSplitMode ? '1' : '0'); }catch(e){}
+  renderCount();
+}
 function ctSetMode(m){
   ctViewMode = m;
   try{ localStorage.setItem('stockboard_count_view', m); }catch(e){}
@@ -5178,6 +5185,24 @@ function ctSetFromList(name, val){
   if(isNaN(v) || v < 0) return;
   var oldQ = Math.min(p.oldQty || 0, v);
   countSession.done[name] = { total: v, old: oldQ, new: v - oldQ };
+  if(countSession.order.indexOf(name) === -1) countSession.order.push(name);
+  ctSaveSession();
+  ctRefreshProgress();
+}
+/* กรอกแบบแยกช่อง เก่า/ใหม่ จากมุมมองรายการ — อ่านค่าทั้งสองช่องในแถวเดียวกัน */
+function ctSplitFromList(el, name){
+  if(!countSession) return;
+  if(!ctFindProduct(name)) return;
+  var ins = el.parentNode.getElementsByTagName('input');
+  var so = String(ins[0].value).trim(), sn = String(ins[1].value).trim();
+  if(so === '' && sn === ''){                       /* ล้างทั้งคู่ = ยังไม่ได้นับ */
+    delete countSession.done[name];
+    var oi = countSession.order.indexOf(name); if(oi > -1) countSession.order.splice(oi, 1);
+    ctSaveSession(); renderCount(); return;
+  }
+  var o = parseInt(so, 10); if(isNaN(o) || o < 0) o = 0;
+  var n = parseInt(sn, 10); if(isNaN(n) || n < 0) n = 0;
+  countSession.done[name] = { total: o + n, old: o, new: n };
   if(countSession.order.indexOf(name) === -1) countSession.order.push(name);
   ctSaveSession();
   ctRefreshProgress();
@@ -5293,6 +5318,8 @@ function renderCount(){
        '</div>';
   h += '<input class="ct-search" id="ctSearch" placeholder="🔍 พิมพ์ชื่อสินค้าเพื่อหา" value="' + ctEsc(ctFilter) + '" ' +
        'oninput="ctSetFilter(this.value)">';
+  h += '<div style="text-align:center"><button class="ct-toggle" onclick="ctSetSplitMode(' + (ctSplitMode ? 'false' : 'true') + ')">' +
+       (ctSplitMode ? '🔀 แยกช่อง เก่า / ใหม่ อยู่ — แตะเพื่อรวมเป็นช่องเดียว' : '➕ แยกช่อง เก่า / ใหม่') + '</button></div>';
 
   /* ============ โหมดเห็นทั้งหมด ============ */
   if(ctViewMode === 'all'){
@@ -5306,6 +5333,9 @@ function renderCount(){
       groups[z].push(p2);
     }
     h += '<div class="ct-rows">';
+    if(order.length && ctSplitMode){
+      h += '<div class="ct-rowhead"><div class="nm">รายการ</div><div class="h">เก่า</div><div class="h">ใหม่</div><div class="hb"></div></div>';
+    }
     if(!order.length){
       h += '<div class="ct-empty">ไม่พบสินค้าที่ค้นหา</div>';
     }
@@ -5316,12 +5346,22 @@ function renderCount(){
         var pp = groups[zone][k];
         var rec = countSession.done[pp.name];
         var val = rec ? rec.total : '';
+        var arg = "'" + ctEsc(pp.name).replace(/'/g,"\\'") + "'";
+        var prev = 'เดิม ' + (pp.qty||0) + ' ' + ctEsc(pp.unit) +
+                   (pp.newQty ? ' (เก่า ' + (pp.oldQty||0) + ' / ใหม่ ' + pp.newQty + ')' : '') +
+                   (rec ? ' → นับได้ ' + rec.total : '');
         h += '<div class="ct-row' + (rec ? ' ok' : '') + '">' +
-             '<div class="nm">' + ctEsc(pp.name) +
-             '<small>เดิม ' + (pp.qty||0) + ' ' + ctEsc(pp.unit) + (rec ? ' → นับได้ ' + rec.total : '') + '</small></div>' +
-             '<input type="number" inputmode="numeric" placeholder="-" value="' + val + '" ' +
-             'onchange="ctSetFromList(\'' + ctEsc(pp.name).replace(/'/g,"\\'") + '\', this.value)">' +
-             '<button class="same" onclick="ctSameFromList(\'' + ctEsc(pp.name).replace(/'/g,"\\'") + '\')">เท่าเดิม</button>' +
+             '<div class="nm">' + ctEsc(pp.name) + '<small>' + prev + '</small></div>' +
+             (ctSplitMode
+               ? '<div class="sp">' +
+                 '<input type="number" inputmode="numeric" placeholder="เก่า" value="' + (rec ? rec.old : '') + '" ' +
+                 'onchange="ctSplitFromList(this, ' + arg + ')">' +
+                 '<input type="number" inputmode="numeric" placeholder="ใหม่" value="' + (rec ? rec.new : '') + '" ' +
+                 'onchange="ctSplitFromList(this, ' + arg + ')">' +
+                 '</div>'
+               : '<input type="number" inputmode="numeric" placeholder="-" value="' + val + '" ' +
+                 'onchange="ctSetFromList(' + arg + ', this.value)">') +
+             '<button class="same" onclick="ctSameFromList(' + arg + ')">เท่าเดิม</button>' +
              '</div>';
       }
     }
@@ -5343,13 +5383,12 @@ function renderCount(){
   h += '<div class="ct-spot"><input id="ctSpot" placeholder="📍 ตำแหน่งเก็บ เช่น ตู้ 2 ชั้นบน" value="' + ctEsc(p.spot || '') + '"></div>';
   h += '<div class="ct-last">ครั้งก่อน: <b>' + (p.qty || 0) + '</b> ' + ctEsc(p.unit) +
        (p.newQty ? ' <span style="font-size:12px;color:var(--txt-3)">(เก่า ' + p.oldQty + ' / ใหม่ ' + p.newQty + ')</span>' : '') + '</div>';
-  h += '<div id="ctQtyBox"><div class="ct-qtyrow"><input class="ct-qty" id="ctQty" type="number" inputmode="numeric" ' +
+  h += '<div id="ctQtyBox"' + (ctSplitMode ? ' style="display:none"' : '') + '><div class="ct-qtyrow"><input class="ct-qty" id="ctQty" type="number" inputmode="numeric" ' +
        'placeholder="0" onkeydown="if(event.key===\'Enter\'){event.preventDefault();ctSubmit();}"><span class="ct-unit">' + ctEsc(p.unit) + '</span></div></div>';
-  h += '<div id="ctSplitBox" style="display:none"><div class="ct-qtyrow">' +
+  h += '<div id="ctSplitBox"' + (ctSplitMode ? '' : ' style="display:none"') + '><div class="ct-qtyrow">' +
        '<div style="flex:1"><span class="ct-splitlab">ของเก่า</span><input class="ct-qty small" id="ctOld" type="number" inputmode="numeric" placeholder="0"></div>' +
        '<div style="flex:1"><span class="ct-splitlab">ของใหม่</span><input class="ct-qty small" id="ctNew" type="number" inputmode="numeric" placeholder="0" ' +
        'onkeydown="if(event.key===\'Enter\'){event.preventDefault();ctSubmit();}"></div></div></div>';
-  h += '<button class="ct-toggle" onclick="ctToggleSplit()">แยกของเก่า / ของใหม่</button>';
   h += '<div class="ct-btnrow"><button class="ct-btn g" onclick="ctSubmit()">✓ บันทึก → ถัดไป</button></div>';
   h += '<div class="ct-btnrow">' +
        '<button class="ct-btn b sm" onclick="ctSame()">เท่าเดิม (' + (p.qty || 0) + ')</button>' +
