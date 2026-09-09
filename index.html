@@ -2951,6 +2951,15 @@ function exportData(){
   }catch(e){ alert("Export ไม่สำเร็จ: "+e.message); }
 }
 
+/* ส่งข้อมูลที่เพิ่งนำเข้าขึ้นคลาวด์ทันที
+   importData() ไม่ได้เรียก saveData() จึงไม่มีการ push ขึ้นคลาวด์ให้เอง และถ้าเครื่องอื่น
+   เคยส่งข้อมูลชุดเก่าไว้ snapshot นั้นจะย้อนกลับมาทับข้อมูลที่เพิ่งนำเข้า
+   → ประทับเวลาไว้กันของเก่าทับ แล้วส่งของใหม่ขึ้นไปเป็นตัวล่าสุด */
+function syncAfterImport(){
+  try{ localStorage.setItem('stockboard_remote_applied', String(Date.now())); }catch(e){}
+  try{ if(typeof sbPushNow === 'function') sbPushNow(); }catch(e){}
+}
+
 function importData(event){
   var file = event.target.files[0];
   if(!file) return;
@@ -2989,6 +2998,7 @@ function importData(event){
         status.textContent="[ IMPORT_OK ] "+locCount+" สถานที่, "+totalProducts+" ITEMS";
         setTimeout(function(){ status.style.display="none"; },4000);
         showCoin("[ LOADED ✓ ]", window.innerWidth/2, 200);
+        syncAfterImport();
 
       }else if(parsed.products){
         // ไฟล์เก่าแบบสถานที่เดียว — นำเข้าเฉพาะสถานที่ปัจจุบัน
@@ -3011,6 +3021,7 @@ function importData(event){
         status.textContent="[ IMPORT_OK ] "+pCount+" ITEMS, LOG "+lCount;
         setTimeout(function(){ status.style.display="none"; },4000);
         showCoin("[ LOADED ✓ ]", window.innerWidth/2, 200);
+        syncAfterImport();
       }else{
         throw new Error("ไฟล์ไม่ถูกต้อง");
       }
