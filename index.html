@@ -1043,6 +1043,8 @@ select.cmd-select {
 .ct-row.ok{background:var(--green-soft)}
 .ct-row .nm{flex:1;min-width:0;font-size:14px;font-weight:600;color:var(--txt);word-break:break-word;line-height:1.35}
 .ct-row .nm small{display:block;font-weight:400;color:var(--txt-3);font-size:11px;margin-top:2px}
+.ct-on{color:var(--orange);font-weight:700}
+.ct-nn{color:var(--brand);font-weight:700}
 .ct-row input{width:62px;flex:0 0 62px;text-align:center;font-size:18px;font-weight:800;padding:9px 2px;border:2px solid var(--border-2);border-radius:10px;background:var(--surface);color:var(--txt)}
 .ct-row.ok input{border-color:var(--green)}
 .ct-row .same{flex:0 0 auto;border:none;background:var(--surface-3);color:var(--txt-2);border-radius:9px;padding:9px 8px;font-size:11px;font-weight:700;cursor:pointer}
@@ -5098,8 +5100,9 @@ function ctSetFromList(name, val){
   }
   var v = parseInt(raw, 10);
   if(isNaN(v) || v < 0) return;
-  var oldQ = Math.min(p.oldQty || 0, v);
-  countSession.done[name] = { total: v, old: oldQ, new: v - oldQ };
+  /* แบ่งแบบเดียวกับโหมดทีละตัว (FIFO): ของเก่าขายไปก่อน ที่เหลือจึงนับเป็นของใหม่ก่อน */
+  var newQ = Math.min(p.newQty || 0, v);
+  countSession.done[name] = { total: v, old: v - newQ, new: newQ };
   if(countSession.order.indexOf(name) === -1) countSession.order.push(name);
   ctSaveSession();
   ctRefreshProgress();
@@ -5240,7 +5243,10 @@ function renderCount(){
         var val = rec ? rec.total : '';
         h += '<div class="ct-row' + (rec ? ' ok' : '') + '">' +
              '<div class="nm">' + ctEsc(pp.name) +
-             '<small>เดิม ' + (pp.qty||0) + ' ' + ctEsc(pp.unit) + (rec ? ' → นับได้ ' + rec.total : '') + '</small></div>' +
+             '<small>เดิม ' + (pp.qty||0) + ' ' + ctEsc(pp.unit) +
+               ' (<span class="ct-on">เก่า ' + (pp.oldQty||0) + '</span> / <span class="ct-nn">ใหม่ ' + (pp.newQty||0) + '</span>)</small>' +
+             (rec ? '<small>นับได้ ' + rec.total + ' (<span class="ct-on">เก่า ' + (rec.old||0) + '</span> / <span class="ct-nn">ใหม่ ' + (rec.new||0) + '</span>)</small>' : '') +
+             '</div>' +
              '<input type="number" inputmode="numeric" placeholder="-" value="' + val + '" ' +
              'onchange="ctSetFromList(\'' + ctEsc(pp.name).replace(/'/g,"\\'") + '\', this.value)">' +
              '<button class="same" onclick="ctSameFromList(\'' + ctEsc(pp.name).replace(/'/g,"\\'") + '\')">เท่าเดิม</button>' +
@@ -5264,7 +5270,7 @@ function renderCount(){
   h += '<div class="ct-cat">' + ctEsc(p.category) + '</div>';
   h += '<div class="ct-spot"><input id="ctSpot" placeholder="📍 ตำแหน่งเก็บ เช่น ตู้ 2 ชั้นบน" value="' + ctEsc(p.spot || '') + '"></div>';
   h += '<div class="ct-last">ครั้งก่อน: <b>' + (p.qty || 0) + '</b> ' + ctEsc(p.unit) +
-       (p.newQty ? ' <span style="font-size:12px;color:var(--txt-3)">(เก่า ' + p.oldQty + ' / ใหม่ ' + p.newQty + ')</span>' : '') + '</div>';
+       ' <span style="font-size:13px">(<span class="ct-on">เก่า ' + (p.oldQty||0) + '</span> / <span class="ct-nn">ใหม่ ' + (p.newQty||0) + '</span>)</span></div>';
   h += '<div id="ctQtyBox"><div class="ct-qtyrow"><input class="ct-qty" id="ctQty" type="number" inputmode="numeric" ' +
        'placeholder="0" onkeydown="if(event.key===\'Enter\'){event.preventDefault();ctSubmit();}"><span class="ct-unit">' + ctEsc(p.unit) + '</span></div></div>';
   h += '<div id="ctSplitBox" style="display:none"><div class="ct-qtyrow">' +
