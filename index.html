@@ -1054,7 +1054,10 @@ select.cmd-select {
 .ct-split2 input::-webkit-inner-spin-button,.ct-split2 input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
 .ct-row .pair input.in-old{border-color:var(--orange)}
 .ct-row .pair input.in-new{border-color:var(--brand)}
-.ct-row .same{align-self:flex-end}
+/* ปุ่ม เท่าเดิม / หมด ซ้อนกันแนวตั้ง */
+.ct-row .acts{display:flex;flex-direction:column;gap:5px;flex:0 0 auto;align-self:flex-end}
+.ct-row .acts button{padding:7px 8px}
+.ct-row .zero{flex:0 0 auto;border:none;background:var(--red-soft);color:var(--red);border-radius:9px;font-size:11px;font-weight:700;cursor:pointer}
 /* ช่องกรอก เก่า | ใหม่ ในหน้าทีละตัว */
 .ct-split2{display:flex;gap:10px;margin-top:10px}
 .ct-split2>div{flex:1;min-width:0}
@@ -5147,6 +5150,14 @@ function ctSetSplitFromList(name, el){
   row.classList.add('ok'); if(got) got.textContent = 'นับได้รวม ' + (o + n);
   ctSaveSession(); ctRefreshProgress();
 }
+/* ปุ่ม "หมด" ในหน้าเห็นทั้งหมด — ใส่ 0 ทั้งเก่าและใหม่ อัปเดตแค่แถวนั้น (หน้าไม่กระโดด) */
+function ctZeroFromList(name, btn){
+  var row = btn && btn.closest ? btn.closest('.ct-row') : null; if(!row) return;
+  var oEl = row.querySelector('.in-old'), nEl = row.querySelector('.in-new');
+  if(oEl) oEl.value = 0;
+  if(nEl) nEl.value = 0;
+  ctSetSplitFromList(name, btn);
+}
 function ctSameFromList(name){
   var p = ctFindProduct(name); if(!p) return;
   countSession.done[name] = { total: p.qty || 0, old: p.oldQty || 0, new: p.newQty || 0 };
@@ -5294,7 +5305,10 @@ function renderCount(){
                '<label class="ct-nn">ใหม่<input class="in-new" type="number" inputmode="numeric" placeholder="-" value="' + vNew + '" ' +
                'onchange="ctSetSplitFromList(\'' + nmJs + '\', this)"></label>' +
              '</div>' +
-             '<button class="same" onclick="ctSameFromList(\'' + nmJs + '\')">เท่าเดิม</button>' +
+             '<div class="acts">' +
+               '<button class="same" onclick="ctSameFromList(\'' + nmJs + '\')">เท่าเดิม</button>' +
+               '<button class="zero" onclick="ctZeroFromList(\'' + nmJs + '\', this)">หมด</button>' +
+             '</div>' +
              '</div>';
       }
     }
