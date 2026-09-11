@@ -1045,6 +1045,25 @@ select.cmd-select {
 .ct-row .nm small{display:block;font-weight:400;color:var(--txt-3);font-size:11px;margin-top:2px}
 .ct-on{color:var(--orange);font-weight:700}
 .ct-nn{color:var(--brand);font-weight:700}
+/* ช่องกรอก เก่า | ใหม่ ในหน้าเห็นทั้งหมด */
+.ct-row .pair{display:flex;gap:6px;flex:0 0 auto}
+.ct-row .pair label{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:10.5px;margin:0}
+.ct-row .pair input{width:52px;flex:0 0 52px;padding:8px 2px;font-size:17px}
+.ct-row .pair input,.ct-split2 input{text-align:center;-moz-appearance:textfield;appearance:textfield}
+.ct-row .pair input::-webkit-inner-spin-button,.ct-row .pair input::-webkit-outer-spin-button,
+.ct-split2 input::-webkit-inner-spin-button,.ct-split2 input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
+.ct-row .pair input.in-old{border-color:var(--orange)}
+.ct-row .pair input.in-new{border-color:var(--brand)}
+.ct-row .same{align-self:flex-end}
+/* ช่องกรอก เก่า | ใหม่ ในหน้าทีละตัว */
+.ct-split2{display:flex;gap:10px;margin-top:10px}
+.ct-split2>div{flex:1;min-width:0}
+.ct-split2 .ct-splitlab{font-size:13px;margin-bottom:5px}
+.ct-split2 .ct-splitlab small{font-weight:400;color:var(--txt-3)}
+.ct-qty.old{border-color:var(--orange)}
+.ct-qty.new{border-color:var(--brand)}
+.ct-total{margin-top:8px;font-size:14px;color:var(--txt-2)}
+.ct-total b{color:var(--txt);font-size:17px}
 .ct-row input{width:62px;flex:0 0 62px;text-align:center;font-size:18px;font-weight:800;padding:9px 2px;border:2px solid var(--border-2);border-radius:10px;background:var(--surface);color:var(--txt)}
 .ct-row.ok input{border-color:var(--green)}
 .ct-row .same{flex:0 0 auto;border:none;background:var(--surface-3);color:var(--txt-2);border-radius:9px;padding:9px 8px;font-size:11px;font-weight:700;cursor:pointer}
@@ -4947,19 +4966,18 @@ function ctRecord(total, oldQ, newQ){
 
 function ctSubmit(){
   var p = ctFindProduct(ctCurrentName()); if(!p) return;
-  var splitOn = document.getElementById('ctSplitBox') && document.getElementById('ctSplitBox').style.display !== 'none';
-  if(splitOn){
-    var o = parseInt(document.getElementById('ctOld').value, 10); if(isNaN(o) || o < 0) o = 0;
-    var n = parseInt(document.getElementById('ctNew').value, 10); if(isNaN(n) || n < 0) n = 0;
-    ctRecord(o + n, o, n);
-  }else{
-    var v = parseInt(document.getElementById('ctQty').value, 10);
-    if(isNaN(v) || v < 0){ alert('ใส่จำนวนที่นับได้ก่อนครับ'); return; }
-    /* ยอดรวมอย่างเดียว: ถือว่าของเก่าถูกใช้ไปก่อน (FIFO)
-       → ที่นับได้จึงเป็นของใหม่ก่อน ส่วนที่เกินจึงเป็นของเก่าที่ยังค้าง */
-    var newQ = Math.min(p.newQty || 0, v);
-    ctRecord(v, v - newQ, newQ);
-  }
+  var oEl = document.getElementById('ctOld'), nEl = document.getElementById('ctNew');
+  var oRaw = oEl ? String(oEl.value).trim() : '', nRaw = nEl ? String(nEl.value).trim() : '';
+  if(oRaw === '' && nRaw === ''){ alert('ใส่จำนวนก่อนครับ (ถ้าไม่มีของเลย กด หมด (0))'); return; }
+  /* ช่องที่เว้นว่างถือเป็น 0 */
+  var o = parseInt(oRaw, 10); if(isNaN(o) || o < 0) o = 0;
+  var n = parseInt(nRaw, 10); if(isNaN(n) || n < 0) n = 0;
+  ctRecord(o + n, o, n);
+}
+function ctSplitSum(){
+  var o = parseInt((document.getElementById('ctOld') || {}).value, 10) || 0;
+  var n = parseInt((document.getElementById('ctNew') || {}).value, 10) || 0;
+  var s = document.getElementById('ctSum'); if(s) s.textContent = (o + n);
 }
 function ctSame(){
   var p = ctFindProduct(ctCurrentName()); if(!p) return;
@@ -5107,6 +5125,28 @@ function ctSetFromList(name, val){
   ctSaveSession();
   ctRefreshProgress();
 }
+/* กรอกแยก เก่า | ใหม่ จากมุมมองรายการ — ช่องที่เว้นว่างถือเป็น 0, ล้างทั้งสองช่อง = ยังไม่ได้นับ
+   ไม่วาดหน้าใหม่ทั้งหมด (กันคีย์บอร์ดปิด/ช่องกระโดด) อัปเดตแค่แถวนั้น */
+function ctSetSplitFromList(name, el){
+  if(!countSession) return;
+  var p = ctFindProduct(name); if(!p) return;
+  var row = el && el.closest ? el.closest('.ct-row') : null; if(!row) return;
+  var oEl = row.querySelector('.in-old'), nEl = row.querySelector('.in-new');
+  var got = row.querySelector('.ct-got');
+  var oRaw = String(oEl.value).trim(), nRaw = String(nEl.value).trim();
+  if(oRaw === '' && nRaw === ''){
+    delete countSession.done[name];
+    var oi = countSession.order.indexOf(name); if(oi > -1) countSession.order.splice(oi, 1);
+    row.classList.remove('ok'); if(got) got.textContent = '';
+    ctSaveSession(); ctRefreshProgress(); return;
+  }
+  var o = parseInt(oRaw, 10); if(isNaN(o) || o < 0) o = 0;
+  var n = parseInt(nRaw, 10); if(isNaN(n) || n < 0) n = 0;
+  countSession.done[name] = { total: o + n, old: o, new: n };
+  if(countSession.order.indexOf(name) === -1) countSession.order.push(name);
+  row.classList.add('ok'); if(got) got.textContent = 'นับได้รวม ' + (o + n);
+  ctSaveSession(); ctRefreshProgress();
+}
 function ctSameFromList(name){
   var p = ctFindProduct(name); if(!p) return;
   countSession.done[name] = { total: p.qty || 0, old: p.oldQty || 0, new: p.newQty || 0 };
@@ -5240,16 +5280,21 @@ function renderCount(){
       for(var k=0;k<groups[zone].length;k++){
         var pp = groups[zone][k];
         var rec = countSession.done[pp.name];
-        var val = rec ? rec.total : '';
+        var nmJs = ctEsc(pp.name).replace(/'/g,"\\'");
+        var vOld = rec ? rec.old : '', vNew = rec ? rec.new : '';
         h += '<div class="ct-row' + (rec ? ' ok' : '') + '">' +
              '<div class="nm">' + ctEsc(pp.name) +
              '<small>เดิม ' + (pp.qty||0) + ' ' + ctEsc(pp.unit) +
                ' (<span class="ct-on">เก่า ' + (pp.oldQty||0) + '</span> / <span class="ct-nn">ใหม่ ' + (pp.newQty||0) + '</span>)</small>' +
-             (rec ? '<small>นับได้ ' + rec.total + ' (<span class="ct-on">เก่า ' + (rec.old||0) + '</span> / <span class="ct-nn">ใหม่ ' + (rec.new||0) + '</span>)</small>' : '') +
+             '<small class="ct-got">' + (rec ? 'นับได้รวม ' + rec.total : '') + '</small>' +
              '</div>' +
-             '<input type="number" inputmode="numeric" placeholder="-" value="' + val + '" ' +
-             'onchange="ctSetFromList(\'' + ctEsc(pp.name).replace(/'/g,"\\'") + '\', this.value)">' +
-             '<button class="same" onclick="ctSameFromList(\'' + ctEsc(pp.name).replace(/'/g,"\\'") + '\')">เท่าเดิม</button>' +
+             '<div class="pair">' +
+               '<label class="ct-on">เก่า<input class="in-old" type="number" inputmode="numeric" placeholder="-" value="' + vOld + '" ' +
+               'onchange="ctSetSplitFromList(\'' + nmJs + '\', this)"></label>' +
+               '<label class="ct-nn">ใหม่<input class="in-new" type="number" inputmode="numeric" placeholder="-" value="' + vNew + '" ' +
+               'onchange="ctSetSplitFromList(\'' + nmJs + '\', this)"></label>' +
+             '</div>' +
+             '<button class="same" onclick="ctSameFromList(\'' + nmJs + '\')">เท่าเดิม</button>' +
              '</div>';
       }
     }
@@ -5270,14 +5315,16 @@ function renderCount(){
   h += '<div class="ct-cat">' + ctEsc(p.category) + '</div>';
   h += '<div class="ct-spot"><input id="ctSpot" placeholder="📍 ตำแหน่งเก็บ เช่น ตู้ 2 ชั้นบน" value="' + ctEsc(p.spot || '') + '"></div>';
   h += '<div class="ct-last">ครั้งก่อน: <b>' + (p.qty || 0) + '</b> ' + ctEsc(p.unit) +
-       ' <span style="font-size:13px">(<span class="ct-on">เก่า ' + (p.oldQty||0) + '</span> / <span class="ct-nn">ใหม่ ' + (p.newQty||0) + '</span>)</span></div>';
-  h += '<div id="ctQtyBox"><div class="ct-qtyrow"><input class="ct-qty" id="ctQty" type="number" inputmode="numeric" ' +
-       'placeholder="0" onkeydown="if(event.key===\'Enter\'){event.preventDefault();ctSubmit();}"><span class="ct-unit">' + ctEsc(p.unit) + '</span></div></div>';
-  h += '<div id="ctSplitBox" style="display:none"><div class="ct-qtyrow">' +
-       '<div style="flex:1"><span class="ct-splitlab">ของเก่า</span><input class="ct-qty small" id="ctOld" type="number" inputmode="numeric" placeholder="0"></div>' +
-       '<div style="flex:1"><span class="ct-splitlab">ของใหม่</span><input class="ct-qty small" id="ctNew" type="number" inputmode="numeric" placeholder="0" ' +
-       'onkeydown="if(event.key===\'Enter\'){event.preventDefault();ctSubmit();}"></div></div></div>';
-  h += '<button class="ct-toggle" onclick="ctToggleSplit()">แยกของเก่า / ของใหม่</button>';
+       '</div>';
+  h += '<div class="ct-split2">' +
+       '<div><span class="ct-splitlab ct-on">ของเก่า <small>(เดิม ' + (p.oldQty||0) + ')</small></span>' +
+       '<input class="ct-qty old" id="ctOld" type="number" inputmode="numeric" placeholder="0" oninput="ctSplitSum()" ' +
+       'onkeydown="if(event.key===\'Enter\'){event.preventDefault();var e=document.getElementById(\'ctNew\');if(e)e.focus();}"></div>' +
+       '<div><span class="ct-splitlab ct-nn">ของใหม่ <small>(เดิม ' + (p.newQty||0) + ')</small></span>' +
+       '<input class="ct-qty new" id="ctNew" type="number" inputmode="numeric" placeholder="0" oninput="ctSplitSum()" ' +
+       'onkeydown="if(event.key===\'Enter\'){event.preventDefault();ctSubmit();}"></div>' +
+       '</div>';
+  h += '<div class="ct-total">รวม <b id="ctSum">0</b> ' + ctEsc(p.unit) + '</div>';
   h += '<div class="ct-btnrow"><button class="ct-btn g" onclick="ctSubmit()">✓ บันทึก → ถัดไป</button></div>';
   h += '<div class="ct-btnrow">' +
        '<button class="ct-btn b sm" onclick="ctSame()">เท่าเดิม (' + (p.qty || 0) + ')</button>' +
