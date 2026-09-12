@@ -5373,6 +5373,69 @@ function renderCount(){
 
 loadStockDataFromJson();
 
+/* ============================================================
+   ย้ายหมวด "หมูเด้ง" จาก บ้านใหญ่ → บ้านดาด๊า (ทำครั้งเดียว)
+   - ย้ายยอดคงเหลือปัจจุบันในเครื่องไปด้วย ไม่ได้รีเซ็ตเป็นค่าในไฟล์ JSON
+   - ถ้าบ้านดาด๊ามีชื่อสินค้าซ้ำอยู่แล้ว จะไม่ย้ายตัวนั้น (กันยอดทับกัน)
+   ============================================================ */
+var MIGR_HMUDENG_KEY = 'stockboard_migr_hmudeng_dada_v1';
+function migrateHmudengToDada(){
+  try{
+    if(localStorage.getItem(MIGR_HMUDENG_KEY)) return;
+    var locs = JSON.parse(localStorage.getItem('stockboard_locations') || '[]') || [];
+    var ldata = JSON.parse(localStorage.getItem('stockboard_locationData') || '{}') || {};
+    var srcId = null, dstId = null;
+    for(var i=0;i<locs.length;i++){
+      if(locs[i].name === 'บ้านใหญ่')  srcId = locs[i].id;
+      if(locs[i].name === 'บ้านดาด๊า') dstId = locs[i].id;
+    }
+    if(!srcId || !dstId || !ldata[srcId] || !ldata[dstId]) return;   /* ยังไม่ครบ ค่อยลองใหม่รอบหน้า */
+
+    var src = ldata[srcId], dst = ldata[dstId];
+    src.products = src.products || []; dst.products = dst.products || [];
+    dst.categories = dst.categories || [];
+
+    var dstNames = {};
+    for(var d=0;d<dst.products.length;d++){ dstNames[dst.products[d].name] = true; }
+
+    var keep = [], moved = 0;
+    for(var k=0;k<src.products.length;k++){
+      var pr = src.products[k];
+      var isHmudeng = (pr.category === 'หมูเด้ง') || (String(pr.name || '').indexOf('หมูเด้ง') === 0);
+      if(isHmudeng && !dstNames[pr.name]){
+        pr.category = 'หมูเด้ง';
+        dst.products.push(pr);
+        dstNames[pr.name] = true;
+        moved++;
+      }else{
+        keep.push(pr);
+      }
+    }
+    if(moved === 0){ localStorage.setItem(MIGR_HMUDENG_KEY, '1'); return; }
+    src.products = keep;
+
+    /* ให้บ้านดาด๊ามีหมวด "หมูเด้ง" */
+    var hasCat = false;
+    for(var c=0;c<dst.categories.length;c++){ if(dst.categories[c].name === 'หมูเด้ง') hasCat = true; }
+    if(!hasCat) dst.categories.push({ emoji:'🐖', name:'หมูเด้ง' });
+
+    /* บ้านใหญ่ไม่เหลือสินค้าหมวดนี้แล้ว → เอาหมวดออก */
+    var stillUsed = false;
+    for(var u=0;u<src.products.length;u++){ if(src.products[u].category === 'หมูเด้ง') stillUsed = true; }
+    if(!stillUsed && src.categories){
+      var nc = [];
+      for(var g=0;g<src.categories.length;g++){ if(src.categories[g].name !== 'หมูเด้ง') nc.push(src.categories[g]); }
+      src.categories = nc;
+    }
+
+    localStorage.setItem('stockboard_locationData', JSON.stringify(ldata));
+    /* ล้างรอบนับที่ค้างอยู่ของสองสถานที่นี้ เพราะรายการสินค้าเปลี่ยนไปแล้ว */
+    try{ localStorage.removeItem('stockboard_count_' + srcId); localStorage.removeItem('stockboard_count_' + dstId); }catch(e){}
+    localStorage.setItem(MIGR_HMUDENG_KEY, '1');
+  }catch(e){ console.warn('[migrate หมูเด้ง]', e); }
+}
+migrateHmudengToDada();
+
 // INIT
 initMultiLocation();
 // NOTE: loadData() ถูกลบออก เพราะมันเขียนทับข้อมูล multi-location

@@ -286,58 +286,6 @@
           "lastOut": null
         },
         {
-          "name": "หมูเด้ง ไร่ขิง",
-          "category": "หมูเด้ง",
-          "unit": "หิ้ว",
-          "minQty": 1,
-          "note": "",
-          "lots": [],
-          "qty": 0,
-          "oldQty": 0,
-          "newQty": 0,
-          "expire": "",
-          "addedAt": "2026-09-02T07:29:00+07:00",
-          "lastIn": null,
-          "lastOut": null
-        },
-        {
-          "name": "หมูเด้ง หลอด",
-          "category": "หมูเด้ง",
-          "unit": "หิ้ว",
-          "minQty": 1,
-          "note": "",
-          "lots": [],
-          "qty": 0,
-          "oldQty": 0,
-          "newQty": 0,
-          "expire": "",
-          "addedAt": "2026-09-02T07:29:00+07:00",
-          "lastIn": null,
-          "lastOut": null
-        },
-        {
-          "name": "หมูเด้ง เปิบ",
-          "category": "หมูเด้ง",
-          "unit": "หิ้ว",
-          "minQty": 1,
-          "note": "",
-          "lots": [
-            {
-              "id": "L4466878925",
-              "qty": 5,
-              "expire": "",
-              "cat": "old"
-            }
-          ],
-          "qty": 5,
-          "oldQty": 5,
-          "newQty": 0,
-          "expire": "",
-          "addedAt": "2026-09-02T07:29:00+07:00",
-          "lastIn": null,
-          "lastOut": null
-        },
-        {
           "name": "ไส้กรอกอีสาน คอลลาเจน",
           "category": "อื่น ๆ",
           "unit": "หิ้ว",
@@ -377,10 +325,6 @@
         {
           "emoji": "🌯",
           "name": "แหนม"
-        },
-        {
-          "emoji": "🐖",
-          "name": "หมูเด้ง"
         },
         {
           "emoji": "🆕",
@@ -1629,6 +1573,58 @@
           "addedAt": "2026-09-02T10:23:00+07:00",
           "lastIn": null,
           "lastOut": null
+        },
+        {
+          "name": "หมูเด้ง ไร่ขิง",
+          "category": "หมูเด้ง",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [],
+          "qty": 0,
+          "oldQty": 0,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T07:29:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "หมูเด้ง หลอด",
+          "category": "หมูเด้ง",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [],
+          "qty": 0,
+          "oldQty": 0,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T07:29:00+07:00",
+          "lastIn": null,
+          "lastOut": null
+        },
+        {
+          "name": "หมูเด้ง เปิบ",
+          "category": "หมูเด้ง",
+          "unit": "หิ้ว",
+          "minQty": 1,
+          "note": "",
+          "lots": [
+            {
+              "id": "L4466878925",
+              "qty": 5,
+              "expire": "",
+              "cat": "old"
+            }
+          ],
+          "qty": 5,
+          "oldQty": 5,
+          "newQty": 0,
+          "expire": "",
+          "addedAt": "2026-09-02T07:29:00+07:00",
+          "lastIn": null,
+          "lastOut": null
         }
       ],
       "categories": [
@@ -1687,6 +1683,10 @@
         {
           "emoji": "💎",
           "name": "เจริญศรี"
+        },
+        {
+          "emoji": "🐖",
+          "name": "หมูเด้ง"
         }
       ]
     }
